@@ -11,7 +11,7 @@ const InputQuestion = () => {
   return (
     <>
        <div className="input-group flex-nowrap " >
-         <input type="text" onChange={handleChange} value={question} placeholder='Type Your Question here' style={{width: '100%', outlineColor: 'none', fontWeight: 'bolder', borderBottom: '3px solid yellow', fontSize: '22px '}} className='py-2'/>
+         <input type="text" onChange={handleChange} value={question} placeholder='Type Your Question here' style={{width: '100%', outlineColor: 'none', fontWeight: 'bolder', borderBottom: '3px solid hsl(48.24deg 58.62% 65.88%)', fontSize: '22px ', backgroundColor: 'hsl(0deg 0% 98.04%)'}} className='py-2'/>
       </div>
     </>
   )

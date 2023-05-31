@@ -19,7 +19,7 @@ function DropdownLabel() {
         id="myDropdown"
         onChange={handleDropdownChange}
         className="card px-3 py-2"
-        style={{ fontSize: '23px', width: '300px', border: '2px solid yellow', outline: 'none' }}
+        style={{ fontSize: '23px', width: '300px', border: '2px solid hsl(48.24deg 58.62% 65.88%)', outline: 'none', backgroundColor: 'hsl(45deg 54.55% 95.69%)' }}
         value={selectedOption}
       >
         <option value="option1">---Select Choises---</option>

@@ -10,13 +10,13 @@ const SideBar = () => {
   };
 
   return (
-    <div className="col-sm-2 card" style={{ height: '100vh' }}>
+    <div className="col-sm-2" style={{ height: '100vh', backgroundColor: 'hsl(0deg 0% 100%)', fontSize: '18px', color:'grey' }}>
       <div className='m-3'>
         <h1 className='py-4' style={{ fontWeight: 'bolder', fontSize: '25px', borderBottom: '1px solid lightgrey' }}>Survey</h1>
       </div>
 
       <div
-        className={`d-flex my-3 ${activeLink === 'mySurvey' ? 'active' : ''}`}
+        className={`d-flex my-5 ${activeLink === 'mySurvey' ? 'active' : ''}`}
         style={{ height: '25px ', borderLeft: activeLink === 'mySurvey' ? '3px solid blue' : 'none' }}
       >
         <img src={book1} alt="" className={`px-3 ${activeLink === 'mySurvey' ? 'active' : ''}`} />

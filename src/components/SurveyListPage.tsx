@@ -14,8 +14,8 @@ const SurveyListPage = () => {
   };
   return (
     <>
-       <div className="col-sm-12 card text-end card" style={{height: '100vh'}}>
-                    <div className="row m-4 py-4 card">
+       <div className="col-sm-12 card text-end " style={{height: '100vh', backgroundColor: 'hsl(0deg 0% 98.04%)'}}>
+                    <div className="row m-4 py-4">
                     <div className="row">
 
                         <div className="col align-self-center">
@@ -54,15 +54,17 @@ const SurveyListPage = () => {
 
 
                         <div className="col-2  align-self-center ps-3">
-                            <button className='btn btn-primary py-2 px-4'>
-                                <Link to='/createSurvey' >CREATE SURVEY</Link>
-                            </button>
+                            <Link to='/createSurvey' >
+                                <button className='btn btn-primary py-2 px-4'> 
+                                    CREATE SURVEY
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     </div>
 
 
-                    <div className="row m-4 py-4 text-center card" style={{height: '100vh'}}>
+                    <div className="row m-4 py-4 text-center " style={{height: '100vh'}}>
                        <div className='row card mx-5 ' style={{maxWidth: '90%', height: '25%'}}>
                           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis sint consequatur commodi eveniet pariatur eos deserunt nemo accusamus quisquam nesciunt?</p>
                         </div>    

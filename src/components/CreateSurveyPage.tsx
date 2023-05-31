@@ -11,14 +11,14 @@ const CreateSurveyPage = () => {
 
      <div className="d-flex flex-column mb-3" style={{height: '100vh'}}>
 
-        <div className="p-4 px-5 card " style={{height: '15%'}}>
+        <div className="p-4 px-5 " style={{height: '15%', backgroundColor: 'hsl(0deg 0% 92.16%)'}}>
           <h1 style={{fontSize: '25px', color: 'blue', fontWeight: 'bolder', lineHeight: '40px'}}>Create Survey</h1>
           <h4><Link to='/'>Home</Link> / My Surveys / <span style={{color: 'blue'}}>  Create Survey</span> </h4>
         </div>
 
 
 
-        <div className="card p-4 px-5" style={{height: '70%'}}>
+        <div className=" p-4 px-5" style={{height: '70%', backgroundColor: 'hsl(0deg 0% 98.04%)'}}>
           <h1 style={{fontSize: '40px', fontWeight: 'bolder'}}>Survey Subject & Description</h1>
           <form action="">
           <div className="input-group flex-nowrap ">
@@ -31,14 +31,14 @@ const CreateSurveyPage = () => {
         </div>
 
 
-        <div className="p-4 px-5 card" style={{height: '15%', borderTop: '2px solid lightgrey'}}>
+        <div className="p-4 px-5 " style={{height: '15%', borderTop: '2px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)'}}>
               <div className='d-flex'>
-                       <button className='d-flex px-5 py-3 p-2 btn btn-primary'>
-                           <h1 style={{fontSize: '25px'}} >
-                            <Link to='/addQuestions'>NEXT</Link>    
-                           </h1 >
-                           <img src={arrowRight} alt="" className='ps-5' style={{height: '25px'}} />
-                         </button>
+                          <Link to='/addQuestions'>
+                            <button className='d-flex px-4 py-3 btn btn-primary'>
+                              NEXT
+                              <img src={arrowRight} alt="" className='ps-4 mx-4' style={{height: '25px'}} />
+                             </button>
+                          </Link>    
                 </div>
            </div>
 

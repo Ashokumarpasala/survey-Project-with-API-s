@@ -21,7 +21,7 @@ const options = ['Option 1', 'Option 2']
                     <p className='m-1'>Option {index + 1}</p>
                     <div className='d-flex'>
                         <input
-                        style={{outline: '2px solid yellow', border: 'none', fontSize: '20px' }}
+                        style={{outline: '2px solid hsl(48.24deg 58.62% 65.88%)', border: 'none', fontSize: '20px', backgroundColor: 'hsl(45deg 54.55% 95.69%)' }}
                         type="text"
                         className="card py-3 mr-5 px-3 "
                         value={option}

@@ -10,8 +10,8 @@ const NavBar = () => {
   return (
     <div>
       
-      <div className="d-flex">
-            <div className="p-2 flex-grow-1  text-end card">
+      <div className="d-flex" style={{backgroundColor: 'hsl(215.48deg 75% 48.63%)', color: 'whitesmoke', fontSize: '23px'}}>
+            <div className="p-2 flex-grow-1  text-end ">
             <div className='d-flex justify-content-end'>
                     <div className='d-flex p-2 m-2'>
                         <h5>Learn</h5>
