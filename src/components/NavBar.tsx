@@ -26,31 +26,31 @@ const NavBar = () => {
                         <img src={downArrow} alt="" className='ps-4' />
                     </div>
                     <h5 className='p-2 m-2'> Jobs</h5>
-                    <div className='d-flex'>
-                        <img src={userGear} alt="" className='ps-4' style={{width: '50px'}} />
+                    <div className='d-flex m-2 ps-4'  style={{borderLeft: '3px solid hsl(215.48deg 80.17% 54.51%)'}}>
+                        <img src={userGear} alt="" className='ps-4' style={{width: '65px'}} />
                         <div className=' m-2 text-start' >
                             <h5>1045</h5>
                             <p style={{fontSize: '10px'}}>Profile Score</p>
                         </div>
                     </div>
-                    <div className='d-flex'>
-                        <img src={coin} alt="" className='ps-4' style={{width: '50px'}} />
+                    <div className='d-flex m-2 ps-4'  style={{borderLeft: '3px solid hsl(215.48deg 80.17% 54.51%)'}}>
+                        <img src={coin} alt="" className='ps-4' style={{width: '65px'}} />
                         <div className=' m-2 text-start' >
                             <h5>400</h5>
                             <p style={{fontSize: '10px'}}>Tokens</p>
                         </div>
                     </div>
-                    <div className='d-flex m-2 ps-4'>
+                    <div className='d-flex m-2 ps-4 px-3'  style={{borderLeft: '3px solid hsl(215.48deg 80.17% 54.51%)'}}>
                            <img src={calander} alt="" style={{width: '30px'}}  />
                      </div>
-                     <div className='d-flex m-2 ps-4'>
-                           <img src={bell} alt="" style={{width: '30px'}}  />
+                     <div className='d-flex m-2 px-3'  style={{borderLeft: '3px solid hsl(215.48deg 80.17% 54.51%)', borderRight: '3px solid hsl(215.48deg 80.17% 54.51%)'}}>
+                           <img src={bell} alt="" style={{width: '30px', marginLeft: '10px'}}  />
                      </div>
                 </div>
             </div>
             <div className=" flex-shrink-1 ">
-               <div className='d-flex p-2 m-2'>
-                        <img src={user} alt="" className='ps-3 ' style={{width: '50px'}} />
+            <div className='d-flex m-3 ps-2 py-2' >
+                        <img src={user} alt="" className='ps-2 ' style={{width: '50px'}} />
                         <div className=' d-flex p-1' >
                             <h5 className='px-2'>UserName</h5>
                             <img src={downArrow} alt="" />

@@ -26,11 +26,10 @@ try {
 const AllQuestions = () => {
   const location = useLocation();
   const { state } = location;
-  console.log('location all question', location)
 
   if (!state || !state.option) {
     // Render a default component or show an error message if state or option is missing
-    return <p>No option selected.</p>;
+    return <p style={{fontSize: '50px', color: 'gray', textAlign: 'center', marginTop: '50px'}}>No option selected.</p>;
   }
 
   // Define an array of questions in the desired order

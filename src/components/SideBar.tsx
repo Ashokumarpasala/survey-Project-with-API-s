@@ -3,9 +3,9 @@ import book1 from './navImages/journal-bookmark-fill.svg';
 import book2 from './navImages/journal-richtext.svg';
 
 const SideBar = () => {
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState('mySurvey'); // Set 'mySurvey' as the initial active link
 
-  const handleLinkClick = (linkName: string) => {
+  const handleLinkClick = (linkName: React.SetStateAction<string>) => {
     setActiveLink(linkName === activeLink ? '' : linkName);
   };
 
@@ -17,7 +17,7 @@ const SideBar = () => {
 
       <div
         className={`d-flex my-5 ${activeLink === 'mySurvey' ? 'active' : ''}`}
-        style={{ height: '25px ', borderLeft: activeLink === 'mySurvey' ? '3px solid blue' : 'none' }}
+        style={{ height: '35px ',fontSize: '23px', borderLeft: activeLink === 'mySurvey' ? '5px solid blue' : 'none' }}
       >
         <img src={book1} alt="" className={`px-3 ${activeLink === 'mySurvey' ? 'active' : ''}`} />
         <h2
@@ -27,7 +27,7 @@ const SideBar = () => {
 
       <div
         className={`d-flex ${activeLink === 'requestedSurvey' ? 'active' : ''}`}
-        style={{ height: '25px ', borderLeft: activeLink === 'requestedSurvey' ? '3px solid blue' : 'none' }}
+        style={{ height: '35px ',fontSize: '23px', borderLeft: activeLink === 'requestedSurvey' ? '5px solid blue' : 'none' }}
       >
         <img src={book2} alt="" className={`px-3 ${activeLink === 'requestedSurvey' ? 'active' : ''}`} />
         <h2
