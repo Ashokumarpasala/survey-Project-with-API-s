@@ -8,14 +8,15 @@ function QuestionOne() {
   const [question, setQuestion] = useState('');
   const { questions, setQuestions } = useContext(FormDataContext);
 
-
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newQuestion = event.target.value;
     setQuestion(newQuestion);
   };
-  
 
- 
+  const addNewQuestion = () => {
+    setQuestions((prevQuestions: any) => [...prevQuestions, { question }]);
+    setQuestion(''); // Reset the question state to clear the input field
+  };
 
   return (
     <>
@@ -72,11 +73,10 @@ function QuestionOne() {
         style={{ height: '15%', borderTop: '3px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)' }}
       >
         <div className="d-flex justify-content-between my-3">
-        <button className="d-flex px-4 py-3 p-2 btn btn-primary" onClick={() => setQuestions((prevQuestions: any) => [...prevQuestions, { question }])}>
-          <h1 style={{ fontSize: '18px' }}>ADD NEW QUESTION</h1>
-          <img src={arrowRight} alt="" className="ps-5" style={{ height: '25px' }} />
-        </button>
-
+          <button className="d-flex px-4 py-3 p-2 btn btn-primary" onClick={addNewQuestion}>
+            <h1 style={{ fontSize: '18px' }}>ADD NEW QUESTION</h1>
+            <img src={arrowRight} alt="" className="ps-5" style={{ height: '25px' }} />
+          </button>
 
           <button className="d-flex px-4 py-3 text-center align-self-center btn btn-primary">
             <h1 style={{ fontSize: '18px' }}>SHARE SURVEY</h1>

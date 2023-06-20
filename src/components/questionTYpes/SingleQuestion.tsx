@@ -35,7 +35,7 @@ const SingleQuestion = () => {
                     <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(18, 1fr)', gap: '1rem'}}>
                         <div className='' style={{ gridColumn: 'span 12',  padding: '1rem' }}>
                             <div className='d-flex justify-content-between py-1'>
-                                <h2 style={{fontSize: '17px '}}>Question {questionNumber}</h2>
+                                <h2 style={{fontSize: '17px '}}>Questions</h2>
                                 <div className='d-flex'>
                                 <h1 style={{fontSize: '24px', fontWeight: 'bolder'}} className='px-4'>Requried </h1>
                                   <SwitchComp />
