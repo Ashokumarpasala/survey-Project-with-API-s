@@ -63,7 +63,8 @@ const SurveyListPage = () => {
         {formDataArray.map((formData: {
           [x: string]: ReactNode; surveyName: string; description: string ; 
 }, index: React.Key | null | undefined) => (
-          <div key={index} className="row card m-2 mx-4" style={{ maxWidth: '95%', height: '140px', overflow: 'auto'}}>
+          <div key={index} className="row  m-2 mx-4 py-3" style={{ maxWidth: '95%', height: '165px', overflow: 'auto', backgroundColor: 'hsl(0deg 0% 100%)', borderRadius: "20px",     boxShadow: '0 2px 4px rgba(0.5, 0.2, 0.3, 0.2)', // Add box shadow
+        }}>
               <div>
                 <div className='d-flex justify-content-between p-3'>
                   <h1 style={{fontWeight: 'bolder', fontSize: '30px'}}>{formData.surveyName}</h1>
