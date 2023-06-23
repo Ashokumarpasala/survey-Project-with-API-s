@@ -36,7 +36,7 @@ const QuestionThree = () => {
           className='py-2'
         />
       </div>
-      <div className="p-4 px-1" style={{ height: '15%', borderTop: '3px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)', marginTop: '400px' }}>
+      <div className="p-4 px-1" style={{ height: '15%', borderTop: '3px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)', marginTop: '100px' }}>
         <div className='d-flex justify-content-between my-3'>
           <button className="d-flex px-4 py-3 p-2 btn btn-primary" onClick={addNewQuestion}>
             <h1 style={{ fontSize: '18px' }} >ADD NEW QUESTION</h1 >

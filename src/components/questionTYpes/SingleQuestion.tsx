@@ -5,20 +5,20 @@ import { Link } from 'react-router-dom'
 import DropDownMenu from './DropDownMenu'
 import SwitchComp from './SwitchComp'
 import AllQuestions from './question/AllQuestions'
-
+import '../questionTYpes/scrollbar.css'
+import trashFill from '../navImages/trash3.svg'
 
 const SingleQuestion = () => {
 
-  const [questionNumber, setQuestionNumber] = useState(1);
-  const { questions } = useContext(FormDataContext);
+  const { questions, setQuestions } = useContext(FormDataContext);
 
-
+  const deleteQuestion = (index: React.Key | null | undefined) => {
+    const updatedQuestions = questions.filter((_: any, i: React.Key | null | undefined) => i !== index);
+    setQuestions(updatedQuestions);
+  };
   
 
-  // const addNewQuestion = () => {
-  //   setQuestionNumber((prevNumber: number) => prevNumber + 1);
-  // };
-  
+
   return (
     <>
      <div className="d-flex flex-column " style={{height: '100vh', color: 'grey'}}>
@@ -51,51 +51,29 @@ const SingleQuestion = () => {
                      <div style={{paddingBottom: '100px'}}>
                          <AllQuestions  />
                       </div>
-                      <div>
-                          {/* <div className="p-4 px-1 " style={{height: '15%', borderTop: '3px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)'}}>
-                                <div className='d-flex justify-content-between my-3'>
-                                        <button className='d-flex px-4 py-3 p-2 btn btn-primary' onClick={addNewQuestion}>
-                                            <h1 style={{fontSize: '18px'}} >ADD NEW QUESTION</h1 >
-                                            <img src={arrowRight} alt="" className='ps-5' style={{height: '25px'}} />
-                                          </button>
-                                          <button className='d-flex px-4 py-3 text-center align-self-center btn btn-primary'>
-                                            <h1 style={{fontSize: '18px'}} >SHARE SURVEY   </h1 >
-                                          </button>
-                                  </div>
-                            </div>                 */}
-                       </div>
-
-                </div>
-                <div className="g-col-4 card mt-4" style={{ gridColumn: 'span 4',  padding: '1rem' }}>
+                 
+                    </div>
+                <div className="g-col-4 card mt-4 custom-scrollbar" style={{ gridColumn: 'span 4',  padding: '1rem', height: "80vh", width: '450px'}}>
                   <div className='py-4 mx-2' style={{borderBottom: '2px solid lightgrey', marginBottom: '20px'}}>
                     <h3>QUESTIONS LIST</h3>
                   </div>
-                  {questions.map((question: { question: string ; }, index: React.Key | null | undefined) => (
-                      <div className='card my-2' style={{ width: '100%' }} key={index}>
-                        <p className='p-2'>{question.question}</p>
+                  <div className="custom-scrollbar" style={{overflow: 'auto'}}>
+                  {questions.map((question: {
+                    [x: string]: number; question: number }, index: React.Key | null | undefined) => (
+                      <div className=" my-2 p-4 d-flex justify-content-between" style={{ margin: '10px', border: '2px solid lightgrey', borderRadius: '10px', overflow: 'hidden' }} key={index}>
+                        <div style={{width: '90%'}}>
+                        <p className="">{question.question}</p>
+                        </div>
+                        <div>
+                          <img src={trashFill} alt="" onClick={() => deleteQuestion(index)} style={{cursor: 'pointer'}}/>
+                        </div>
                       </div>
-                  ))}
-
-                 
+                    ))}
+                  </div>
                 </div>
                     
             </div>
         </div>
-
-{/* 
-        <div className="p-4 px-5  " style={{height: '15%', borderTop: '3px solid lightgrey', backgroundColor: 'hsl(0deg 0% 98.04%)'}}>
-              <div className='d-flex justify-content-between my-3'>
-                       <button className='d-flex px-4 py-3 p-2 btn btn-primary' onClick={addNewQuestion}>
-                           <h1 style={{fontSize: '18px'}} >ADD NEW QUESTION</h1 >
-                           <img src={arrowRight} alt="" className='ps-5' style={{height: '25px'}} />
-                         </button>
-                         <button className='d-flex px-4 py-3 text-center align-self-center btn btn-primary'>
-                           <h1 style={{fontSize: '18px'}} >SHARE SURVEY   </h1 >
-                         </button>
-                </div>
-           </div> */}
-
-
       </div>
     </>
   )
