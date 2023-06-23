@@ -60,7 +60,7 @@ const SingleQuestion = () => {
                   <div className="custom-scrollbar" style={{overflow: 'auto'}}>
                   {questions.map((question: {
                     [x: string]: number; question: number }, index: React.Key | null | undefined) => (
-                      <div className=" my-2 p-4 d-flex justify-content-between" style={{ margin: '10px', border: '2px solid lightgrey', borderRadius: '10px', overflow: 'hidden' }} key={index}>
+                      <div className=" my-2 p-4 d-flex justify-content-between" style={{ margin: '10px',border: '2px solid hsl(48.24deg 58.62% 65.88%)', borderRadius: '60px', overflow: 'hidden' }} key={index}>
                         <div style={{width: '90%'}}>
                         <p className="">{question.question}</p>
                         </div>
