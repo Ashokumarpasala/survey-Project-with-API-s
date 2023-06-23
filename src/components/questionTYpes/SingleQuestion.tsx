@@ -3,20 +3,28 @@ import { FormDataContext } from '../../addFormData';
 import { Link } from 'react-router-dom'
 // import arrowRight from '../navImages/arrow-right.svg'
 import DropDownMenu from './DropDownMenu'
-import SwitchComp from './SwitchComp'
+// import SwitchComp from './SwitchComp'
 import AllQuestions from './question/AllQuestions'
 import '../questionTYpes/scrollbar.css'
 import trashFill from '../navImages/trash3.svg'
 
+
+
 const SingleQuestion = () => {
 
   const { questions, setQuestions } = useContext(FormDataContext);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleSwitchToggle = () => {
+    setIsChecked(!isChecked);
+  };
 
   const deleteQuestion = (index: React.Key | null | undefined) => {
     const updatedQuestions = questions.filter((_: any, i: React.Key | null | undefined) => i !== index);
     setQuestions(updatedQuestions);
   };
   
+ 
 
 
   return (
@@ -38,13 +46,17 @@ const SingleQuestion = () => {
                                 <h2 style={{fontSize: '17px '}}>Questions</h2>
                                 <div className='d-flex'>
                                 <h1 style={{fontSize: '24px', fontWeight: 'bolder'}} className='px-4'>Requried </h1>
-                                  <SwitchComp />
+                              
+                                <div className="form-check form-switch ">
+                                      <input className="form-check-input" type="checkbox"  style={{width: '45px', height: '25px'}} role="switch" id="flexSwitchCheckChecked" checked={isChecked} onChange={handleSwitchToggle} />
                                 </div>
+
+                                    </div>
                             </div>
                         </div>
 
                         <div className="g-col-4 text-center mr-3 pr-3" style={{ gridColumn: 'span 6',  padding: '1rem' }}>
-                           <DropDownMenu  />
+                        <DropDownMenu disabled={!isChecked} />
                         </div>
                     </div>
 

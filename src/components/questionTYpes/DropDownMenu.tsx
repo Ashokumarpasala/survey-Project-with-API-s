@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function DropdownLabel() {
+
+interface DropDownMenuProps {
+  disabled?: boolean;
+}
+
+const DropdownLabel = ({ disabled }: DropDownMenuProps) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const naviagte = useNavigate()
@@ -19,8 +24,11 @@ function DropdownLabel() {
         id="myDropdown"
         onChange={handleDropdownChange}
         className="card px-2 py-2"
-        style={{ fontSize: '23px', width: '250px', border: '2px solid hsl(48.24deg 58.62% 65.88%)', outline: 'none', backgroundColor: 'hsl(45deg 54.55% 95.69%)' }}
+        style={{ fontSize: '23px', width: '250px',          color: disabled ? 'lightgray' : 'initial', // Add color styling
+        border: '2px solid hsl(48.24deg 58.62% 65.88%)', outline: 'none', backgroundColor: 'hsl(45deg 54.55% 95.69%)' }}
         value={selectedOption}
+        disabled={disabled} // Add the disabled prop here
+
       >
         <option value="option1">Choose Question</option>
         <option value="option2">Single Choice</option>
