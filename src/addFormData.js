@@ -6,6 +6,8 @@ export const FormDataProvider = ({ children }) => {
   const [formDataArray, setFormDataArray] = useState([]);
   const [questions, setQuestions] = useState([]);
 
+  console.log(questions)
+
   useEffect(() => {
     const storedFormData = sessionStorage.getItem('formDataArray');
     if (storedFormData) {

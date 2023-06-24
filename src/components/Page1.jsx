@@ -6,6 +6,7 @@ import SurveyListPage from './SurveyListPage';
 import CreateSurveyPage from "./CreateSurveyPage";
 import SingleQuestion from './questionTYpes/SingleQuestion';
 import { FormDataProvider } from '../addFormData';
+import RequestedSurvey from './RequestedSurvey';
 
 const Page1 = () => {
   
@@ -23,6 +24,7 @@ const Page1 = () => {
                         <Route exact path='/' element={<SurveyListPage />} />
                         <Route exact path="/createSurvey" element={<CreateSurveyPage />} />
                         <Route exact path='/addQuestions' element={<SingleQuestion />} />
+                        <Route exact path='/requestedSurveysList' element={<RequestedSurvey />} />
                     </Routes>
                      </FormDataProvider>
                 </Router>

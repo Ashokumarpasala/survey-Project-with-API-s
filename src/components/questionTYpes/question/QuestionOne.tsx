@@ -4,8 +4,8 @@ import cross from '../../navImages/x-circle-fill.svg';
 import arrowRight from '../../navImages/arrow-right.svg';
 
 function QuestionOne() {
-  const options = ['Option 1', 'Option 2'];
   const [question, setQuestion] = useState('');
+  const [options, setOptions] = useState(['', '']);
   const { questions, setQuestions } = useContext(FormDataContext);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -13,9 +13,22 @@ function QuestionOne() {
     setQuestion(newQuestion);
   };
 
+  const handleOptionChange = (index: number, value: string) => {
+    setOptions((prevOptions) => {
+      const newOptions = [...prevOptions];
+      newOptions[index] = value;
+      return newOptions;
+    });
+  };
+
   const addNewQuestion = () => {
-    setQuestions((prevQuestions: any) => [...prevQuestions, { question }]);
-    setQuestion(''); // Reset the question state to clear the input field
+    const newQuestion = {
+      question,
+      options,
+    };
+    setQuestions((prevQuestions: any) => [...prevQuestions, newQuestion]);
+    setQuestion('');
+    setOptions(['Option ', 'Option ']); // Reset the options array
   };
 
   return (
@@ -58,9 +71,11 @@ function QuestionOne() {
                   fontSize: '20px',
                   backgroundColor: 'hsl(45deg 54.55% 95.69%)',
                 }}
+                placeholder='Option'
                 type="text"
                 className="card py-3 mr-5 px-3"
                 value={option}
+                onChange={(e) => handleOptionChange(index, e.target.value)}
               />
               <img src={cross} alt="" style={{ width: '30px' }} />
             </div>

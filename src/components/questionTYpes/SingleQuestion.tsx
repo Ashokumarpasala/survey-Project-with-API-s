@@ -7,6 +7,8 @@ import DropDownMenu from './DropDownMenu'
 import AllQuestions from './question/AllQuestions'
 import '../questionTYpes/scrollbar.css'
 import trashFill from '../navImages/trash3.svg'
+import { useLocation } from 'react-router-dom';
+
 
 
 
@@ -23,6 +25,9 @@ const SingleQuestion = () => {
     const updatedQuestions = questions.filter((_: any, i: React.Key | null | undefined) => i !== index);
     setQuestions(updatedQuestions);
   };
+
+  const location = useLocation();
+  const surveyName = location.state?.surveyName;
   
  
 
@@ -32,7 +37,7 @@ const SingleQuestion = () => {
      <div className="d-flex flex-column " style={{height: '100vh', color: 'grey'}}>
 
         <div className="p-3 px-5 py-2  " style={{height: '10%', backgroundColor: 'hsl(0deg 0% 92.16%)'}}>
-          <h1 style={{fontSize: '25px', color: 'blue', fontWeight: 'bolder', lineHeight: '40px'}}>Create Survey - <span>Survey Title</span></h1>
+          <h1 style={{fontSize: '25px', color: 'blue', fontWeight: 'bolder', lineHeight: '40px', marginBottom :"10px"}}>Create Survey : <span>Survey Title  - {surveyName}</span></h1>
           <h4><Link to='/'>Home</Link> / My Surveys / <span style={{color: 'blue'}}>  Create Survey</span> </h4>
         </div>
 
@@ -65,8 +70,8 @@ const SingleQuestion = () => {
                       </div>
                  
                     </div>
-                <div className="g-col-4 card mt-4 custom-scrollbar" style={{ gridColumn: 'span 4',  padding: '1rem', height: "80vh", width: '450px'}}>
-                  <div className='py-4 mx-2' style={{borderBottom: '2px solid lightgrey', marginBottom: '20px'}}>
+                <div className="g-col-4 card mt-3 custom-scrollbar" style={{ gridColumn: 'span 4',  padding: '1rem', height: "80vh", width: '450px', borderRadius:"25px"}}>
+                  <div className='py-4 mx-2' style={{borderBottom: '2px solid lightgrey', marginBottom: '20px', fontWeight:"bolder"}}>
                     <h3>QUESTIONS LIST</h3>
                   </div>
                   <div className="custom-scrollbar" style={{overflow: 'auto'}}>
@@ -75,7 +80,7 @@ const SingleQuestion = () => {
                     
                   questions.map((question: {
                     [x: string]: number; question: number }, index: React.Key | null | undefined) => (
-                      <div className=" my-2 p-4 d-flex justify-content-between" style={{ margin: '10px',border: '2px solid hsl(48.24deg 58.62% 65.88%)', borderRadius: '60px', overflow: 'hidden' }} key={index}>
+                      <div className=" my-2 p-4 d-flex justify-content-between" style={{ margin: '10px',border: '2px solid hsl(48.24deg 58.62% 65.88%)', borderRadius: '20px', overflow: 'hidden', backgroundColor: 'hsl(45deg 54.55% 95.69%)'  }} key={index}>
                         <div style={{width: '90%'}}>
                         <p className="">{question.question}</p>
                         </div>

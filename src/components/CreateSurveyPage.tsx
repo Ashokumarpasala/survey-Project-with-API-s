@@ -17,11 +17,6 @@ const CreateSurveyPage = () => {
     }));
   };
   
-  // const handleSubmit = (event: { preventDefault: () => void }) => {
-  //   event.preventDefault();
-  //   addFormData(formData); // Add the current formData using the addFormData function from context
-  //   navigate('/addQuestions');
-  // };
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     event.preventDefault();
@@ -38,7 +33,7 @@ const CreateSurveyPage = () => {
     };
     
     addFormData(formDataWithTimeAndDate); // Add the updated formData to the context
-    navigate('/addQuestions');
+    navigate('/addQuestions', { state: { surveyName: formData.surveyName } });
   };
 
   const isFormEmpty = formData.surveyName === '' || formData.description === '';
@@ -49,7 +44,7 @@ const CreateSurveyPage = () => {
     <>
       <div className="d-flex flex-column mb-3" style={{ height: '100vh' }}>
         <div className="p-4 px-5" style={{ height: '15%', backgroundColor: 'hsl(0deg 0% 92.16%)' }}>
-          <h1 style={{ fontSize: '25px', color: 'blue', fontWeight: 'bolder', lineHeight: '40px' }}>Create Survey</h1>
+          <h1 style={{ fontSize: '25px', color: 'blue', fontWeight: 'bolder', lineHeight: '40px', marginBottom:"10px" }}>Create Survey</h1>
           <h4>
             <Link to="/">Home</Link> / My Surveys / <span style={{ color: 'blue' }}> Create Survey</span>
           </h4>

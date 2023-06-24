@@ -29,10 +29,14 @@ const SideBar = () => {
         className={`d-flex ${activeLink === 'requestedSurvey' ? 'active' : ''}`}
         style={{ height: '35px ',fontSize: '23px', borderLeft: activeLink === 'requestedSurvey' ? '5px solid blue' : 'none' }}
       >
+        
         <img src={book2} alt="" className={`px-3 ${activeLink === 'requestedSurvey' ? 'active' : ''}`} />
-        <h2
-          onClick={() => handleLinkClick('requestedSurvey')}
-        >Requested Survey</h2>
+        <h2 onClick={() => handleLinkClick('requestedSurvey')}>
+         
+          Requested Survey
+          
+        </h2>
+
       </div>
     </div>
   );
