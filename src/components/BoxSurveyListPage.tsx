@@ -17,6 +17,7 @@ function BoxSurveyListPage() {
         setTimeout(() => {
           setShowDropdown(false);
         }, 5000);
+        
       };
     
       const handleDeleteClick = (index: number) => {
@@ -47,7 +48,6 @@ function BoxSurveyListPage() {
                     borderRadius: '20px',
                     boxShadow: '0 2px 4px rgba(0.5, 0.2, 0.3, 0.2)', // Add box shadow
                     marginBottom: '20px', // Add margin bottom for spacing
-
                   }}
                 >
                   <div>
