@@ -37,11 +37,8 @@ function QuestionOne() {
   };
 
   const handleShareSurvey = () => {
-    setSurveyShared(false);
-    setShowTransparentCover(true);
-    setInterval(() => {
-      setSurveyShared(true)
-    }, 3000)
+    setSurveyShared(true)
+  
     
   };
 
@@ -83,7 +80,7 @@ function QuestionOne() {
               height: '100%',
             }}
           >
-            {surveyShared === false ? (
+            {surveyShared  ? (
               <div className="card text-center" style={{width:"450px", height:"380px", borderRadius:"30px"}}>
                 <div className="card-body">
                 <img src={emjoy} alt="" style={{width:"120px", position:"relative", left:"36%", bottom:"80px"}}/>
@@ -221,7 +218,7 @@ function QuestionOne() {
               <img src={arrowRight} alt="" className="ps-5" style={{ height: '25px' }} />
             </button>
 
-            <button className="d-flex px-4 py-3 text-center align-self-center btn btn-primary" onClick={handleShareSurvey}>
+            <button className="d-flex px-4 py-3 text-center align-self-center btn btn-primary" onClick={() => setShowTransparentCover(true)}>
               <h1 style={{ fontSize: '18px' }}>SHARE SURVEY</h1>
             </button>
           </div>
